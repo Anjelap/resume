@@ -1,0 +1,35 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>List Resume</title>
+		
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		
+			<h3>Resume</h3>
+			
+			<hr/>
+			<div th:each="resume: ${resumes}">
+				<p>Name: <span th:text="${resume.name}"></span>.</p><br>
+				<p>Age: <span th:text="${resume.age}"></span>.</p><br>
+				<p>Phone no: <span th:text="${resume.phone}"></span>.</p><br>
+				<p>Email-Id: <span th:text="${resume.email}"></span>.</p><br>
+				<p>Department: <span th:text="${resume.department}"></span>.</p><br>
+				<p>City: <span th:text="${resume.city}"></span>.</p><br>
+				<p>Area of Interest: <span th:text="${resume.areaofinterest}"></span>.</p><br>
+				<p>Cgpa: <span th:text="${resume.cgpa}"></span>.</p><br>
+				<a th:href="@{/showResume(Id=${resume.id})}" class="btn btn-info">Update</a>
+				</div>
+			<br/><br/>
+			</div>
+		
+	</body>
+	
+</html>
